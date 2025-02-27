@@ -1,5 +1,4 @@
-res://instances/obstakel.tscn
-res://instances/obstakel.gd
-res://instances/speler.gd
 res://instances/speler.tscn
+res://instances/speler.gd
 res://levels/level1.tscn
+res://instances/obstakel.tscn
