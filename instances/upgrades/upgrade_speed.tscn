@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs46amsw8n5k0"]
+
+[ext_resource type="Script" path="res://instances/upgrades/upgrade_speed.gd" id="1_2118v"]
+[ext_resource type="Texture2D" uid="uid://84wycenv1k2r" path="res://instances/upgrades/upgrade2.svg" id="2_pxvf6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gatf"]
+radius = 181.0
+
+[node name="UpgradeSpeed" type="Area2D"]
+script = ExtResource("1_2118v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6gatf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pxvf6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

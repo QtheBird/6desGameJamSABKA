@@ -1,25 +1,27 @@
 extends CharacterBody2D
 var obstakelScene = preload("res://instances/obstakel.tscn")
 
+@onready var camera = $Camera2D
 var currentPosition = Vector2(0,0)
 var previousPosition = Vector2(0,0)
+var stepSize = 64
 
 func _input(event):
 	if event.is_action_pressed("ui_right"):
 		previousPosition = currentPosition
-		currentPosition.x += 32
+		currentPosition.x += stepSize
 		obstaclePlacer(currentPosition)
 	elif event.is_action_pressed("ui_left"):
 		previousPosition = currentPosition
-		currentPosition.x -= 64
+		currentPosition.x -= stepSize
 		obstaclePlacer(currentPosition)
 	elif event.is_action_pressed("ui_down"):
 		previousPosition = currentPosition
-		currentPosition.y += 32
+		currentPosition.y += stepSize
 		obstaclePlacer(currentPosition)
 	elif event.is_action_pressed("ui_up"):
 		previousPosition = currentPosition
-		currentPosition.y -= 32
+		currentPosition.y -= stepSize
 		obstaclePlacer(currentPosition)
 
 	self.position = currentPosition

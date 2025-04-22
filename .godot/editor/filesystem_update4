@@ -1,4 +1,6 @@
-res://instances/speler.tscn
-res://instances/speler.gd
+res://instances/upgrades/upgrade_speed.gd
+res://instances/upgrades/upgrade_speed.tscn
 res://levels/level1.tscn
+res://instances/speler.tscn
 res://instances/obstakel.tscn
+res://instances/speler.gd
