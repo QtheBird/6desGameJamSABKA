@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var obstakelScene = preload("res://instances/obstakel.tscn")
-
+var speedUpgradeScene = preload("res://instances/upgrades/upgrade_speed.tscn")
 @onready var camera = $Camera2D
 var currentPosition = Vector2(0,0)
 var previousPosition = Vector2(0,0)
@@ -38,12 +38,17 @@ func obstaclePlacer(playerPosition):
 	richting.x = playerPosition.x + cos(hoek)*randf_range(400,600)
 	richting.y = playerPosition.y + sin(hoek)*randf_range(400,600)
 	
-	var nieuwObstakel = obstakelScene.instantiate()
-	get_parent().add_child(nieuwObstakel)
-	nieuwObstakel.position = richting
+	var nieuwObject = null
+	if randi_range(0,9) == 1:
+		#plaats upgrade
+		nieuwObject= speedUpgradeScene.instantiate()
+	else:
+		nieuwObject = obstakelScene.instantiate()
+	get_parent().add_child(nieuwObject)
+	nieuwObject.position = richting
 	
 func _on_area_2d_area_entered(area):
-	if area.get_parent() is Obstakel:
+	if area is Obstakel:
 		currentPosition = previousPosition
 		self.position = previousPosition
 

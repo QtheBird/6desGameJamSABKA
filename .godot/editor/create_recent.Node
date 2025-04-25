@@ -1,4 +1,9 @@
+AnimationPlayer
+Button
+Label
+VBoxContainer
+ColorRect
+Area2D
 Camera2D
 Sprite2D
 CollisionShape2D
-Area2D
