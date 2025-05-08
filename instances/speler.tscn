@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3ahugo08oqf2"]
+[gd_scene load_steps=6 format=3 uid="uid://c3ahugo08oqf2"]
 
 [ext_resource type="Script" path="res://instances/speler.gd" id="1_g1itu"]
 [ext_resource type="Texture2D" uid="uid://urjc3xdcirde" path="res://icon.svg" id="2_25igs"]
+[ext_resource type="PackedScene" uid="uid://c2icrhv46vhxs" path="res://UI/game_over.tscn" id="3_hc782"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bd2xv"]
 radius = 28.0179
@@ -24,5 +25,10 @@ shape = SubResource("CircleShape2D_bd2xv")
 shape = SubResource("CircleShape2D_631rn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="gameOver" parent="CanvasLayer" instance=ExtResource("3_hc782")]
+visible = false
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

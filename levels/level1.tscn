@@ -16,4 +16,4 @@ position = Vector2(65, 136)
 position = Vector2(422, 21)
 
 [node name="obstakel2" parent="." instance=ExtResource("4_mj64a")]
-position = Vector2(-202, 233)
+position = Vector2(-216, 194)

@@ -6,6 +6,7 @@ var currentPosition = Vector2(0,0)
 var previousPosition = Vector2(0,0)
 var stepSize = 64
 var inputAllowed = true
+@onready var gameOver = $CanvasLayer/gameOver
 
 func _input(event):
 	if inputAllowed:
@@ -55,4 +56,5 @@ func _on_area_2d_area_entered(area):
 		self.position = previousPosition
 	elif area is danger:
 		inputAllowed = false
+		gameOver.visible = true
 
