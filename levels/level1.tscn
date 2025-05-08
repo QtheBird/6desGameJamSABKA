@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvqxmxqv7f770"]
+[gd_scene load_steps=5 format=3 uid="uid://bvqxmxqv7f770"]
 
 [ext_resource type="PackedScene" uid="uid://c3ahugo08oqf2" path="res://instances/speler.tscn" id="1_y74lj"]
 [ext_resource type="PackedScene" uid="uid://d10y58h7nboc8" path="res://instances/obstakel.tscn" id="2_rvvtn"]
 [ext_resource type="PackedScene" uid="uid://bs46amsw8n5k0" path="res://instances/upgrades/upgrade_speed.tscn" id="3_qtn8l"]
+[ext_resource type="PackedScene" uid="uid://drpawltn0tfyl" path="res://instances/dangerobstakel.tscn" id="4_mj64a"]
 
 [node name="level1" type="Node2D"]
 
@@ -13,3 +14,6 @@ position = Vector2(65, 136)
 
 [node name="UpgradeSpeed" parent="." instance=ExtResource("3_qtn8l")]
 position = Vector2(422, 21)
+
+[node name="obstakel2" parent="." instance=ExtResource("4_mj64a")]
+position = Vector2(-202, 233)

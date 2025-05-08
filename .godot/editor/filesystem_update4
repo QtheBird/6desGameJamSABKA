@@ -1,6 +1,8 @@
-res://UI/startScherm.gd
-res://UI/startScherm.tscn
 res://levels/level1.tscn
 res://instances/speler.tscn
 res://instances/obstakel.tscn
 res://instances/upgrades/upgrade_speed.tscn
+res://UI/startScherm.tscn
+res://instances/dangerobstakel.tscn
+res://instances/dangerobstakel.gd
+res://instances/speler.gd

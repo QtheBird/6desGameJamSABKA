@@ -5,26 +5,28 @@ var speedUpgradeScene = preload("res://instances/upgrades/upgrade_speed.tscn")
 var currentPosition = Vector2(0,0)
 var previousPosition = Vector2(0,0)
 var stepSize = 64
+var inputAllowed = true
 
 func _input(event):
-	if event.is_action_pressed("ui_right"):
-		previousPosition = currentPosition
-		currentPosition.x += stepSize
-		obstaclePlacer(currentPosition)
-	elif event.is_action_pressed("ui_left"):
-		previousPosition = currentPosition
-		currentPosition.x -= stepSize
-		obstaclePlacer(currentPosition)
-	elif event.is_action_pressed("ui_down"):
-		previousPosition = currentPosition
-		currentPosition.y += stepSize
-		obstaclePlacer(currentPosition)
-	elif event.is_action_pressed("ui_up"):
-		previousPosition = currentPosition
-		currentPosition.y -= stepSize
-		obstaclePlacer(currentPosition)
-
-	self.position = currentPosition
+	if inputAllowed:
+		if event.is_action_pressed("ui_right"):
+			previousPosition = currentPosition
+			currentPosition.x += stepSize
+			obstaclePlacer(currentPosition)
+		elif event.is_action_pressed("ui_left"):
+			previousPosition = currentPosition
+			currentPosition.x -= stepSize
+			obstaclePlacer(currentPosition)
+		elif event.is_action_pressed("ui_down"):
+			previousPosition = currentPosition
+			currentPosition.y += stepSize
+			obstaclePlacer(currentPosition)
+		elif event.is_action_pressed("ui_up"):
+			previousPosition = currentPosition
+			currentPosition.y -= stepSize
+			obstaclePlacer(currentPosition)
+	
+		self.position = currentPosition
 
 
 # Als BOTSING:
@@ -51,4 +53,6 @@ func _on_area_2d_area_entered(area):
 	if area is Obstakel:
 		currentPosition = previousPosition
 		self.position = previousPosition
+	elif area is danger:
+		inputAllowed = false
 
