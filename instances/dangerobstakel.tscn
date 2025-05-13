@@ -43,7 +43,7 @@ _data = {
 "spin": SubResource("Animation_lj78g")
 }
 
-[node name="obstakel" type="Area2D"]
+[node name="dangerobstakel" type="Area2D"]
 rotation = 6.28319
 script = ExtResource("1_e0ca5")
 
@@ -59,3 +59,5 @@ libraries = {
 "": SubResource("AnimationLibrary_cyati")
 }
 autoplay = "spin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

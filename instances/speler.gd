@@ -50,11 +50,4 @@ func obstaclePlacer(playerPosition):
 	get_parent().add_child(nieuwObject)
 	nieuwObject.position = richting
 	
-func _on_area_2d_area_entered(area):
-	if area is Obstakel:
-		currentPosition = previousPosition
-		self.position = previousPosition
-	elif area is danger:
-		inputAllowed = false
-		gameOver.visible = true
 

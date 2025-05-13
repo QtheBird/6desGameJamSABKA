@@ -1,6 +1,9 @@
-res://instances/dangerobstakel.tscn
-res://levels/level1.tscn
-res://instances/speler.tscn
+res://instances/obstakel.gd
 res://instances/obstakel.tscn
+res://instances/dangerobstakel.gd
+res://instances/speler.tscn
+res://instances/speler.gd
+res://levels/level1.tscn
 res://UI/startScherm.tscn
+res://instances/dangerobstakel.tscn
 res://UI/game_over.tscn
